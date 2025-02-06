@@ -28,5 +28,8 @@
     "eslint-plugin-prettier": "^5.2.3",
     "prettier": "^3.4.2"
   },
+  "resolutions": {
+    "@expo/cli": "xxx"
+  },
   "private": true
 }

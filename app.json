@@ -1,7 +1,7 @@
 {
   "expo": {
     "name": "curso-react-native-metacritic-app",
-    "slug": "curso-react-native-metacritic-app",
+    "slug": "lista-de-juegos",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -23,6 +23,12 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "extra": {
+      "eas": {
+        "projectId": "2391cee4-7158-40c4-9bad-53c53446ec38"
+      }
+    },
+    "owner": "juanlums"
   }
 }
