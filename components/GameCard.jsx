@@ -1,17 +1,33 @@
-import { useRef, useEffect } from "react";
+import { useRef, useEffect, useState } from "react";
 import { Image, StyleSheet, Text, View, Animated } from "react-native";
+import { getRandomNumber } from "../lib/numeros";
+import { Score } from "./Score";
 
 export function GameCard({ game }) {
+	const [score, setScore] = useState([]);
+
+	getRandomNumber().then((number) => {
+		setScore(number);
+	});
+
 	return (
-		<View key={game.id} style={styles.card}>
+		<View
+			className="flex-row bg-slate-700/30 p-4 rounded-xl gap-4 mb-10"
+			key={game.id}
+		>
 			<Image source={{ uri: game.thumbnail }} style={styles.image} />
-			<Text style={styles.title}>{game.title}</Text>
-			<Text style={styles.genre}>{game.genre}</Text>
-			<Text style={styles.platform}>{game.platform}</Text>
-			<Text style={styles.publisher}>{game.publisher}</Text>
-			<Text style={styles.developer}>{game.developer}</Text>
-			<Text style={styles.date}>{game.release_date}</Text>
-			<Text style={styles.description}>{game.short_description}</Text>
+			<View>
+				<Text className="color-orange-500 text-xl font-bold">{game.title}</Text>
+				<Score score={score} maxScore={100} />
+				<Text style={styles.genre}>{game.genre}</Text>
+				<Text style={styles.platform}>{game.platform}</Text>
+				<Text style={styles.publisher}>{game.publisher}</Text>
+				<Text style={styles.developer}>{game.developer}</Text>
+				<Text style={styles.date}>{game.release_date}</Text>
+				<Text className="mt-3 flex-shrink-0" style={styles.description}>
+					{game.short_description.slice(0, 100)}...
+				</Text>
+			</View>
 		</View>
 	);
 }
@@ -36,58 +52,19 @@ export function AnimatedGameCard({ game }) {
 }
 
 const styles = StyleSheet.create({
-	card: {
-		marginBottom: 42,
-		alignItems: "center",
-	},
+	card: { marginBottom: 42, alignItems: "center" },
 
-	image: {
-		width: "100%",
-		height: 200,
-		borderRadius: 10,
-	},
+	image: { width: 130, height: 205, borderRadius: 10 },
 
-	title: {
-		color: "rgba(255, 123, 8, 0.95)",
-		fontSize: 16,
-		fontWeight: "bold",
-		marginTop: 10,
-	},
+	genre: { color: "#fff", fontSize: 12, marginTop: 5 },
 
-	genre: {
-		color: "#fff",
-		fontSize: 12,
-		marginTop: 5,
-	},
+	platform: { color: "#fff", fontSize: 12, marginTop: 5 },
 
-	platform: {
-		color: "#fff",
-		fontSize: 12,
-		marginTop: 5,
-	},
+	publisher: { color: "#fff", fontSize: 12, marginTop: 5 },
 
-	publisher: {
-		color: "#fff",
-		fontSize: 12,
-		marginTop: 5,
-	},
+	developer: { color: "#fff", fontSize: 12, marginTop: 5 },
 
-	developer: {
-		color: "#fff",
-		fontSize: 12,
-		marginTop: 5,
-	},
+	date: { color: "#fff", fontSize: 12, marginTop: 5 },
 
-	date: {
-		color: "#fff",
-		fontSize: 12,
-		marginTop: 5,
-	},
-
-	description: {
-		color: "#fff",
-		fontSize: 12,
-		marginTop: 5,
-		textAlign: "center",
-	},
+	description: { color: "#fff", fontSize: 12 },
 });
