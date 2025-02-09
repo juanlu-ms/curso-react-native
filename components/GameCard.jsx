@@ -6,9 +6,11 @@ import { Score } from "./Score";
 export function GameCard({ game }) {
 	const [score, setScore] = useState([]);
 
-	getRandomNumber().then((number) => {
-		setScore(number);
-	});
+	useEffect(() => {
+		getRandomNumber().then((number) => {
+			setScore(number);
+		});
+	}, []);
 
 	return (
 		<View
@@ -17,8 +19,12 @@ export function GameCard({ game }) {
 		>
 			<Image source={{ uri: game.thumbnail }} style={styles.image} />
 			<View>
-				<Text className="color-orange-500 text-xl font-bold">{game.title}</Text>
-				<Score score={score} maxScore={100} />
+				<View className="flex-row items-center gap-4 mb-2">
+					<Text className="color-orange-500 text-xl font-bold">
+						{game.title}
+					</Text>
+					<Score score={score} maxScore={100} />
+				</View>
 				<Text style={styles.genre}>{game.genre}</Text>
 				<Text style={styles.platform}>{game.platform}</Text>
 				<Text style={styles.publisher}>{game.publisher}</Text>
