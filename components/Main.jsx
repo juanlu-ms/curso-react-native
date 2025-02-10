@@ -26,10 +26,8 @@ export function Main() {
 			</View>
 
 			<Link asChild href={"/about"}>
-				<Pressable>
-					{({ pressed }) => (
-						<CircleInfoIcon style={{ opacity: pressed ? 0.5 : 1 }} />
-					)}
+				<Pressable className={`active:opacity-50`}>
+					<CircleInfoIcon />
 				</Pressable>
 			</Link>
 
