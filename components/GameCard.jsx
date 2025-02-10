@@ -14,7 +14,7 @@ export function GameCard({ game }) {
 
 	return (
 		<View
-			className="flex-row bg-slate-700/30 p-4 rounded-xl gap-4 mb-10"
+			className="flex-row bg-slate-700/30 p-4 rounded-xl gap-4 m-3 mb-8"
 			key={game.id}
 		>
 			<Image source={{ uri: game.thumbnail }} style={styles.image} />
