@@ -6,8 +6,8 @@ export default function About() {
 	return (
 		<ScrollView className="p-7">
 			<Link asChild href={"/"}>
-				<Pressable>
-					{({ pressed }) => <HomeIcon style={{ opacity: pressed ? 0.5 : 1 }} />}
+				<Pressable className={`active:opacity-50`}>
+					<HomeIcon />
 				</Pressable>
 			</Link>
 
