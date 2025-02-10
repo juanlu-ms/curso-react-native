@@ -30,6 +30,9 @@
         "projectId": "2391cee4-7158-40c4-9bad-53c53446ec38"
       }
     },
-    "owner": "juanlums"
+    "owner": "juanlums",
+    "plugins": [
+      "expo-router"
+    ]
   }
 }
