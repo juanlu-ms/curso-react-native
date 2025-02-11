@@ -58,8 +58,8 @@ export function AnimatedGameCard({ game }) {
 	useEffect(() => {
 		Animated.timing(opacity, {
 			toValue: 1,
-			duration: 500,
-			delay: game.id * 200,
+			duration: 100,
+			delay: game.id * 100,
 			useNativeDriver: true,
 		}).start();
 	}, [opacity, game.id]);
