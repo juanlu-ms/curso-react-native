@@ -29,21 +29,15 @@ export function GameCard({ game }) {
 				<View className="flex-row  gap-4" key={game.id}>
 					<Image source={{ uri: game.thumbnail }} style={styles.image} />
 					<View className="flex-shrink">
-						<View className="flex-row items-center gap-4 mb-2">
-							<View className="flex-shrink">
-								<Text className="color-orange-500 text-xl font-bold">
-									{game.title}
-								</Text>
-							</View>
-							<Score score={score} maxScore={100} />
-						</View>
-						<Text style={styles.genre}>{game.genre}</Text>
-						<Text style={styles.platform}>{game.platform}</Text>
-						<Text style={styles.publisher}>{game.publisher}</Text>
-						<Text style={styles.developer}>{game.developer}</Text>
-						<Text style={styles.date}>{game.release_date}</Text>
-						<Text className="mt-3 flex-shrink-0" style={styles.description}>
-							{game.short_description.slice(0, 100)}...
+						<Text className="color-orange-500 text-2xl font-bold mb-2">
+							{game.title}
+						</Text>
+						<Score score={score} maxScore={100} />
+						<Text
+							className="mt-5 flex-shrink-0 text-lg text-white"
+							style={styles.description}
+						>
+							{game.short_description.slice(0, 70)}...
 						</Text>
 					</View>
 				</View>
@@ -72,19 +66,5 @@ export function AnimatedGameCard({ game }) {
 }
 
 const styles = StyleSheet.create({
-	card: { marginBottom: 42, alignItems: "center" },
-
-	image: { width: 130, height: 205, borderRadius: 10 },
-
-	genre: { color: "#fff", fontSize: 12, marginTop: 5 },
-
-	platform: { color: "#fff", fontSize: 12, marginTop: 5 },
-
-	publisher: { color: "#fff", fontSize: 12, marginTop: 5 },
-
-	developer: { color: "#fff", fontSize: 12, marginTop: 5 },
-
-	date: { color: "#fff", fontSize: 12, marginTop: 5 },
-
-	description: { color: "#fff", fontSize: 12 },
+	image: { width: 130, height: 170, borderRadius: 10 },
 });
