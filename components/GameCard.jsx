@@ -21,7 +21,7 @@ export function GameCard({ game }) {
 	}, []);
 
 	return (
-		<Link href={`/${game.title}`} asChild>
+		<Link href={`/${game.id}`} asChild>
 			<Pressable
 				className="active:opacity-50 border border-black active:border-white/50 m-3
 					 bg-slate-700/30 p-4 rounded-xl"
