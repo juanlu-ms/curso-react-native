@@ -20,17 +20,21 @@ export function Main() {
 	}, []);
 
 	return (
-		<View style={{ paddingTop: insets.top, paddingBottom: insets.bottom }}>
-			<View style={{ marginBottom: 20, alignItems: "center" }}>
-				<Logo />
+		<View
+			className="bg-black"
+			style={{ paddingTop: insets.top, paddingBottom: insets.bottom }}
+		>
+			<View className="flex-row justify-between items-center m-4 mt-6">
+				<View>
+					<Logo />
+				</View>
+
+				<Link asChild href={"/about"}>
+					<Pressable className={`active:opacity-50`}>
+						<CircleInfoIcon />
+					</Pressable>
+				</Link>
 			</View>
-
-			<Link asChild href={"/about"}>
-				<Pressable className={`active:opacity-50`}>
-					<CircleInfoIcon />
-				</Pressable>
-			</Link>
-
 			{games.length === 0 ?
 				<View
 					style={{ flex: 1, justifyContent: "center", alignItems: "center" }}
