@@ -4,7 +4,7 @@ import { HomeIcon } from "../components/Icons";
 
 export default function About() {
 	return (
-		<ScrollView className="p-7">
+		<ScrollView className="bg-black p-7">
 			<Link asChild href={"/"}>
 				<Pressable className={`active:opacity-50`}>
 					<HomeIcon />
