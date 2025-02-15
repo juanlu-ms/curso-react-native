@@ -9,7 +9,7 @@ export default function Layout() {
 			<StatusBar style="light" backgroundColor="black" />
 			<View className="flex-1">
 				<Stack
-					initialRouteName="index"
+					//initialRouteName="index"
 					screenOptions={{
 						headerStyle: { backgroundColor: "black" },
 						headerTintColor: "white",
