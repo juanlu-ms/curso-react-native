@@ -1,18 +1,18 @@
-import { Link } from "expo-router";
-import { Pressable, ScrollView, Text } from "react-native";
-import { HomeIcon } from "../../components/Icons";
+import { Stack } from "expo-router";
+import { ScrollView, Text } from "react-native";
 import { Screen } from "../../components/Screen";
 
 export default function About() {
 	return (
 		<Screen>
+			<Stack.Screen
+				options={{
+					headerLeft: () => null,
+					headerTitle: "Sobre nosotros",
+					headerRight: () => null,
+				}}
+			/>
 			<ScrollView>
-				<Link asChild href={"/"}>
-					<Pressable className={`active:opacity-50`}>
-						<HomeIcon />
-					</Pressable>
-				</Link>
-
 				<Text className="text-white font-bold mb-8 text-2xl">
 					Sobre el proyecto
 				</Text>
